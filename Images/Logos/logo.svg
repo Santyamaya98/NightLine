@@ -1,0 +1,76 @@
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background (transparent, optimized for dark websites) -->
+  <defs>
+    <!-- Gold metallic gradient -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5E6B3"/>
+      <stop offset="40%" stop-color="#D4AF37"/>
+      <stop offset="70%" stop-color="#B8962E"/>
+      <stop offset="100%" stop-color="#FFF3C1"/>
+    </linearGradient>
+
+    <!-- Silver/Gray gradient -->
+    <linearGradient id="grayGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E6E6E6"/>
+      <stop offset="50%" stop-color="#9C9C9C"/>
+      <stop offset="100%" stop-color="#F2F2F2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer circle -->
+  <circle cx="300" cy="300" r="260" fill="none" stroke="url(#goldGradient)" stroke-width="10"/>
+
+  <!-- Inner circle -->
+  <circle cx="300" cy="300" r="230" fill="none" stroke="#444" stroke-width="4"/>
+
+  <!-- NL Monogram -->
+  <g transform="translate(300 325)">
+
+    <!-- Letter N -->
+    <path d="
+      M -110 80
+      V -120
+      L -40 40
+      V -120
+      H -10
+      V 80
+      L -80 -40
+      V 80
+      Z"
+      fill="url(#grayGradient)"/>
+
+    <!-- Letter L -->
+    <path d="
+      M 40 -120
+      V 80
+      H 120
+      V 50
+      H 70
+      V -120
+      Z"
+      fill="url(#goldGradient)"/>
+
+  </g>
+
+  <!-- Brand text -->
+  <text x="300" y="480"
+        text-anchor="middle"
+        font-family="Cinzel, Trajan Pro, Times New Roman, serif"
+        font-size="48"
+        fill="#FFFFFF"
+        letter-spacing="3">
+    NIGHT LINE
+  </text>
+
+  <!-- Tagline -->
+  <text x="300" y="520"
+        text-anchor="middle"
+        font-family="Montserrat, Arial, sans-serif"
+        font-size="16"
+        fill="#BBBBBB"
+        letter-spacing="2">
+    LUXURY EVENTS & EXPERIENCES
+  </text>
+
+</svg>
