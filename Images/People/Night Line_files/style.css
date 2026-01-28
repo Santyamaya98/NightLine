@@ -39,11 +39,9 @@ body {
 #TextTitleDiv, #TextExperienciasDiv {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 50%;
     padding: 1rem 3rem; 
-    
 }
-
 
 #TitleImg, #ExpImg1, #ExpImg2, #ExpImg3 {
   width: 50%;
@@ -61,16 +59,15 @@ body {
   
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
-#TitleImg:hover,
-#ExpImg1:hover,
-#ExpImg2:hover,
-#ExpImg3:hover {
+
+#TitleImg:hover {
   border-color: var(--coffee-golden);
   transform: scale(1.03);
   box-shadow:
     0 20px 40px -15px var(--shadow-color),
     0 40px 80px -25px rgba(94, 80, 0, 0.5);
 }
+
 #Title, #TitleExperiencias {
     color: var(--secondary-color);
     font-size: 3rem;
@@ -141,99 +138,39 @@ body {
 }
 
 /* Responsive Design */
-/* Responsive Design */
 @media (max-width: 768px) {
-    #TitleDiv, #ExperienciasDiv {
+    #TitleDiv {
         flex-direction: column;
         max-width: 95%;
     }
     
-    #TextTitleDiv, #TitleExperienciasDiv {
+    #TextTitleDiv {
         width: 100%;
         padding: 1.5rem;
         order: 2;
     }
     
-    #TitleImg, #ExpImg1, #ExpImg2, #ExpImg3 {
+    #TitleImg {
         width: 100%;
         height: 250px;
         order: 1;
-        margin-right: 0;
-        margin-bottom: 1rem;
     }
     
-    #Title, #TitleExperiencias {
+    #Title {
         font-size: 2.2rem;
-    }
-    
-    #TitleParagraph, #TextExperiencias {
-        font-size: 1rem;
-        margin-bottom: 20px;
-    }
-    
-    #whatsapp {
-        max-width: 100%;
-        width: 100%;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    #TitleDiv, #ExperienciasDiv {
+    #TitleDiv {
         max-width: 90%;
     }
     
-    #TextTitleDiv, #TitleExperienciasDiv {
+    #TextTitleDiv {
         padding: 2rem;
     }
     
-    #Title, #TitleExperiencias {
+    #Title {
         font-size: 2.5rem;
-    }
-    
-    #TitleImg, #ExpImg1, #ExpImg2, #ExpImg3 {
-        margin-right: 20px;
-    }
-    
-    #TitleParagraph, #TextExperiencias {
-        font-size: 1.1rem;
-        margin-bottom: 30px;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        margin-top: 5%;
-        margin-bottom: 5%;
-    }
-    
-    #TitleDiv, #ExperienciasDiv {
-        max-width: 98%;
-        border-radius: 2rem;
-        margin: 0 auto 1rem;
-    }
-    
-    #TextTitleDiv, #TitleExperienciasDiv {
-        padding: 1rem;
-    }
-    
-    #TitleImg, #ExpImg1, #ExpImg2, #ExpImg3 {
-        height: 200px;
-        border-radius: 2rem;
-    }
-    
-    #Title, #TitleExperiencias {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-    
-    #TitleParagraph, #TextExperiencias {
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin-bottom: 15px;
-    }
-    
-    #whatsapp {
-        padding: 10px 20px;
-        font-size: 0.9rem;
     }
 }
