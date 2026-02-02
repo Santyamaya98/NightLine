@@ -33,6 +33,8 @@ verticalSliderInner.style.padding = "5px";
 // Style images for single display
 [ExpImg1, ExpImg2, ExpImg3].forEach(img => {
     if (img) {
+        img.style.padding = "5px";
+        img.style.borderRadius = "120px";
         img.style.width = "95%";
         img.style.marginBottom = "10px";
         img.style.height = "100%";

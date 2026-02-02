@@ -7,6 +7,8 @@
     const TitleExperiencias = document.getElementById("TitleExperiencias");
     const TextExperiencias = document.getElementById("TextExperiencias");
     const TextExperienciasDiv = document.getElementById("TextExperienciasDiv");
+    const queHacemosTitle = document.getElementById("queHacemosTitle");
+    const queHacemosText = document.getElementById("queHacemosText");
     //Images
     const LogoNightLine = document.createElement("img");
     const navId = document.getElementById("navId")
@@ -76,3 +78,46 @@
         TextExperiencias.style.display = "column";
         TextExperiencias.innerHTML = "Nos encargamos de la producción, la música y cada detalle para que tu evento fluya sin estrés y se convierta en una experiencia inolvidable.";
     }
+
+    if (queHacemosText){
+        TextExperiencias.style.color = "White";
+        TextExperiencias.style.display = "column";
+        TextExperiencias.innerHTML = "";
+    }
+
+    // Data for images
+const imageData = [
+    {
+        title: "Eventos Sociales",
+        description: "Celebraciones como 15 años, aniversarios y fiestas privadas, producidas con puntualidad, orden y una presentación impecable, para que todo se vea bien organizado y se disfrute con total tranquilidad."
+    },
+    {
+        title: "Bodas",
+        description: "Producción integral para bodas donde cada detalle técnico y musical fluye sin estrés, cuidando los tiempos, el ambiente y la experiencia, para que los novios solo se concentren en disfrutar su gran día."
+    },
+    {
+        title: "Marcas",
+        description: "Eventos corporativos y activaciones de marca diseñadas para conectar con el público y fortalecer el posicionamiento."
+    }
+];
+
+// Function to populate the grid
+function populateImageGrid() {
+    // Set main title and text
+    document.getElementById('queHacemosTitle').textContent = '¿Qué Hacemos?';
+    document.getElementById('queHacemosText').textContent = 'Aquí puedes ver algunos ejemplos de nuestro trabajo.';
+    
+    // Get all grid items
+    const gridItems = document.querySelectorAll('.grid-item');
+    
+    // Populate each grid item with data
+    gridItems.forEach((item, index) => {
+        if (imageData[index]) {
+            item.querySelector('.image-title').textContent = imageData[index].title;
+            item.querySelector('.image-description').textContent = imageData[index].description;
+        }
+    });
+}
+
+// Call the function when the DOM is loaded
+document.addEventListener('DOMContentLoaded', populateImageGrid);

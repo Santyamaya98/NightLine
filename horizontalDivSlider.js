@@ -45,8 +45,8 @@
             div.style.background = "#000000";
             div.style.borderRadius = "5rem";
             div.style.overflow = "hidden";
-            div.style.boxShadow = "0 4px 20px rgb(188, 187, 187)";
-            div.style.border = "1.3px solid #c3a705";
+            div.style.boxShadow = "0 4px 20px rgb(153, 88, 246)";
+            div.style.border = "1.3px solid #8d22ff";
             div.style.margin = "0";
             div.style.maxWidth = "100%";
             div.style.padding = "0";
@@ -81,7 +81,7 @@
             dot.style.width = "12px";
             dot.style.height = "12px";
             dot.style.borderRadius = "50%";
-            dot.style.backgroundColor = i === 0 ? "#c3a705" : "rgba(195, 167, 5, 0.4)";
+            dot.style.backgroundColor = i === 0 ? "#8d22ff" : "rgb(153, 88, 246)";
             dot.style.cursor = "pointer";
             dot.style.transition = "background-color 0.3s ease, transform 0.3s ease";
             
@@ -105,7 +105,7 @@
             arrow.style[direction === "left" ? "left" : "right"] = "20px";
             arrow.style.width = "40px";
             arrow.style.height = "40px";
-            arrow.style.background = "rgba(195, 167, 5, 0.8)";
+            arrow.style.background = "rgba(193, 50, 245, 0.48)";
             arrow.style.borderRadius = "50%";
             arrow.style.cursor = "pointer";
             arrow.style.display = "flex";
@@ -119,11 +119,11 @@
                 : `<span style="color: white; font-size: 18px;">&#8250;</span>`;
             
             arrow.addEventListener("mouseenter", () => {
-                arrow.style.background = "#c3a705";
+                arrow.style.background = "#8d22ff88";
                 arrow.style.transform = "translateY(-50%) scale(1.1)";
             });
             arrow.addEventListener("mouseleave", () => {
-                arrow.style.background = "rgba(195, 167, 5, 0.8)";
+                arrow.style.background = "rgba(154, 88, 246, 0.42)";
                 arrow.style.transform = "translateY(-50%) scale(1)";
             });
             
@@ -145,8 +145,8 @@
             
             dots.forEach((dot, index) => {
                 dot.style.backgroundColor = index === currentSlide 
-                    ? "#c3a705" 
-                    : "rgba(195, 167, 5, 0.4)";
+                    ? "#ffffff"
+                    : "rgb(182, 182, 182)";
             });
         }
 
@@ -168,7 +168,7 @@
 
         function startAutoPlay() {
             stopAutoPlay();
-            autoPlayInterval = setInterval(nextSlide, 4800);
+            autoPlayInterval = setInterval(nextSlide, 5200);
         }
 
         function stopAutoPlay() {
