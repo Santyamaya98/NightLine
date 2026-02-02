@@ -9,6 +9,8 @@
     const TextExperienciasDiv = document.getElementById("TextExperienciasDiv");
     const queHacemosTitle = document.getElementById("queHacemosTitle");
     const queHacemosText = document.getElementById("queHacemosText");
+    const clientesTitle = document.getElementById("clientesTitle");
+    const clientesText = document.getElementById("clientesText");
     //Images
     const LogoNightLine = document.createElement("img");
     const navId = document.getElementById("navId")
@@ -72,17 +74,19 @@
         TitleExperiencias.style.color = "White";
         TitleExperiencias.style.display = "column";
         TitleExperiencias.innerHTML = "Más que eventos creamos experiencias";
+        TitleExperiencias.style.width = "100%";
     }   
     if (TextExperiencias){
         TextExperiencias.style.color = "White";
         TextExperiencias.style.display = "column";
+        TextExperiencias.style.width = "100%";   
         TextExperiencias.innerHTML = "Nos encargamos de la producción, la música y cada detalle para que tu evento fluya sin estrés y se convierta en una experiencia inolvidable.";
     }
 
     if (queHacemosText){
-        TextExperiencias.style.color = "White";
-        TextExperiencias.style.display = "column";
-        TextExperiencias.innerHTML = "";
+        queHacemosText.style.color = "black";
+        queHacemosText.style.display = "column";
+        queHacemosText.innerHTML = "";
     }
 
     // Data for images
@@ -96,16 +100,34 @@ const imageData = [
         description: "Producción integral para bodas donde cada detalle técnico y musical fluye sin estrés, cuidando los tiempos, el ambiente y la experiencia, para que los novios solo se concentren en disfrutar su gran día."
     },
     {
-        title: "Marcas",
+        title: "Promoción de marcas",
         description: "Eventos corporativos y activaciones de marca diseñadas para conectar con el público y fortalecer el posicionamiento."
+    },
+    {
+        title: "Paola Suarez",
+        description: "Quería darles las gracias por todo. Fue una experiencia increíble, todo estuvo espectacular y mi amiga quedó completamente feliz. De verdad superaron nuestras expectativas. Fue el mejor cumpleaños!"
+    },
+    {
+        title: "Juan Carlos Gómez",
+        description: "Gracias  Night Line pudimos disfrutar nuestra boda al 100%. Todo fluyó perfecto. No tuvimos que preocuparnos por nada y eso nos permitió vivir el momento sin estrés. Fue una tranquilidad total contar con ustedes."
+    },
+    {
+        title: "Isabel Lancheros",
+        description: "Un equipo profesional, organizado y creativo. Night Line se encargó de toda la producción y logró un gran impacto en nuestros clientes creando una experiencia impecable para nuestra marca."
     }
 ];
 
 // Function to populate the grid
-function populateImageGrid() {
+function populateImageQueHacemosGrid() {
     // Set main title and text
-    document.getElementById('queHacemosTitle').textContent = '¿Qué Hacemos?';
-    document.getElementById('queHacemosText').textContent = 'Aquí puedes ver algunos ejemplos de nuestro trabajo.';
+    queHacemosTitle.textContent = '¿Qué Hacemos?';
+    clientesTitle.textContent = 'Clientes Satisfechos';
+    clientesText.textContent = 'Lo que nuestros clientes dicen de nosotros:';
+    clientesTitle.style.color = 'black';
+    queHacemosTitle.style.color = 'black';
+    queHacemosTitle.style.margin = "15px";
+    queHacemosTitle.style.padding= "1px";
+    queHacemosText.textContent = "Contamos con una amplia experiencia en:";
     
     // Get all grid items
     const gridItems = document.querySelectorAll('.grid-item');
@@ -120,4 +142,4 @@ function populateImageGrid() {
 }
 
 // Call the function when the DOM is loaded
-document.addEventListener('DOMContentLoaded', populateImageGrid);
+document.addEventListener('DOMContentLoaded', populateImageQueHacemosGrid);
