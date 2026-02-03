@@ -1,95 +1,175 @@
-    const TitleH1 = document.getElementById("Title");
-    const TitleParagraph = document.getElementById("TitleParagraph");
-    const TitleDiv = document.getElementById("TitleDiv");
-    const TextTitleDiv =  document.getElementById("TextTitleDiv");
-    const WhatsAppButton = document.getElementById("whatsapp");
-    const ExperienciasDiv = document.getElementById("ExperienciasDiv");
-    const TitleExperiencias = document.getElementById("TitleExperiencias");
-    const TextExperiencias = document.getElementById("TextExperiencias");
-    const TextExperienciasDiv = document.getElementById("TextExperienciasDiv");
-    const queHacemosTitle = document.getElementById("queHacemosTitle");
-    const queHacemosText = document.getElementById("queHacemosText");
-    const clientesTitle = document.getElementById("clientesTitle");
-    const clientesText = document.getElementById("clientesText");
-    //Images
-    const LogoNightLine = document.createElement("img");
-    const navId = document.getElementById("navId")
-    LogoNightLine.src = "./Images/Logos/N|NightLineRed.png";
-    LogoNightLine.alt  = 'LogoNightLine';
-    const TitleImg = document.getElementById("TitleImg");
-    TitleImg.style.maxHeight = "80%";
-    // Make it small
-    LogoNightLine.style.width = '100px';
-    LogoNightLine.style.height = 'auto';          // Maintains aspect ratio
-    LogoNightLine.style.maxWidth = '100px';       // Forces max size
-    LogoNightLine.style.maxHeight = '100px';      // Forces max height
-    LogoNightLine.style.objectFit = 'contain';
-    // Position top-left
-    LogoNightLine.style.position = 'fixed';
-    LogoNightLine.style.top = '10px';
-    LogoNightLine.style.left = '10px';
+const TitleH1 = document.getElementById("Title");
+const TitleParagraph = document.getElementById("TitleParagraph");
+const TitleDiv = document.getElementById("TitleDiv");
+const TextTitleDiv = document.getElementById("TextTitleDiv");
+const WhatsAppButton = document.getElementById("whatsapp");
+const ExperienciasDiv = document.getElementById("ExperienciasDiv");
+const TitleExperiencias = document.getElementById("TitleExperiencias");
+const TextExperiencias = document.getElementById("TextExperiencias");
+const TextExperienciasDiv = document.getElementById("TextExperienciasDiv");
+const queHacemosTitle = document.getElementById("queHacemosTitle");
+const queHacemosText = document.getElementById("queHacemosText");
+const clientesTitle = document.getElementById("clientesTitle");
+const clientesText = document.getElementById("clientesText");
+//Images
+const LogoNightLine = document.createElement("img");
+const navId = document.getElementById("navId")
+LogoNightLine.src = "./Images/Logos/N|NightLineRed.png";
+LogoNightLine.alt = 'LogoNightLine';
+const TitleImg = document.getElementById("TitleImg");
+TitleImg.style.maxHeight = "80%";
 
-    // Create the <imgwa>
-    const imgwa = document.createElement('img');
-    imgwa.src  = './Images/Logos/icons8-whatsapp-48.png';
-    imgwa.alt  = 'WhatsApp';
-    imgwa.padding = 5;
-    imgwa.margin = 5;
-    imgwa.width  = 24;     // or 48 if you want original size
-    imgwa.height = 24;
+// Create the <imgwa>
+const imgwa = document.createElement('img');
+imgwa.src = './Images/Logos/icons8-whatsapp-48.png';
+imgwa.alt = 'WhatsApp';
+imgwa.padding = 5;
+imgwa.margin = 5;
+imgwa.width = 24;     // or 48 if you want original size
+imgwa.height = 24;
 
-    if (navId){
-        navId.append(LogoNightLine);
+// ==============================
+// STYLE THE NAV CONTAINER FIRST
+// ==============================
+if (navId) {
+    navId.style.display = "flex";
+    navId.style.alignItems = "center";
+    navId.style.position = "fixed";
+    navId.style.top = "10px";
+    navId.style.left = "10px";
+    navId.style.zIndex = "1000";
+    navId.style.gap = "10px";  // Space between logos
+}
 
-    }
+// ==============================
+// NIGHTLINE LOGO (Remove fixed positioning)
+// ==============================
+LogoNightLine.style.width = '100px';
+LogoNightLine.style.height = 'auto';
+LogoNightLine.style.maxWidth = '100px';
+LogoNightLine.style.maxHeight = '100px';
+LogoNightLine.style.objectFit = 'contain';
+// REMOVED: position, top, left (now handled by parent)
+
+// ==============================
+// HELPER FUNCTION (DRY approach)
+// ==============================
+function styleLogoIcon(logo, src, alt, width = "40px", height = "40px") {
+    logo.src = src;
+    logo.alt = alt;
+    logo.style.width = width;
+    logo.style.height = height;
+    logo.style.cursor = "pointer";
+    logo.style.objectFit = "contain";
+    logo.style.display = "block";  // ← Important!
+    return logo;
+}
+
+// AV Alejo
+const AVLogo = document.createElement("img");
+styleLogoIcon(AVLogo, "./Images/Logos/AV.png", "AV Alejo");
+
+// YOUTUBE
+const YouTubeLogo = document.createElement("img");
+styleLogoIcon(YouTubeLogo, "./Images/Logos/youTubeLogo.png", "YouTube");
+
+// INSTAGRAM
+const InstagramLogo = document.createElement("img");
+styleLogoIcon(InstagramLogo, "./Images/Logos/instaLogo.png", "Instagram");
+
+// DECASTRO DJ
+const DeCastroLogo = document.createElement("img");
+styleLogoIcon(DeCastroLogo, "./Images/Logos/deCastro.png", "DeCastro DJ", "120px", "40px");
+
+// WHATSAPP
+const WhatsAppLogo = document.createElement("img");
+styleLogoIcon(WhatsAppLogo, "./Images/Logos/icons8-whatsapp-48.png", "WhatsApp");
+
+// ==============================
+// APPEND + LINK EVENTS
+// ==============================
+if (navId) {
+    navId.style.display = "flex";
+    navId.style.justifyContent = "center";      // ← Centers horizontally
+    navId.style.alignItems = "center";          // ← Centers vertically
+    navId.style.position = "fixed";
+    navId.style.top = "0";
+    navId.style.left = "0";
+    navId.style.width = "100%";                 // ← Full width
+    navId.style.padding = "15px 0";
+    navId.style.gap = "30px";                   // ← Spacing between items
+    navId.style.zIndex = "1000";
+    navId.style.backgroundColor = "rgba(0, 0, 0, 0.8)";  // Optional background
+    navId.append(LogoNightLine, AVLogo, YouTubeLogo, InstagramLogo, DeCastroLogo, WhatsAppLogo);
+
+    AVLogo.addEventListener("click", () => {
+        window.open("https://www.instagram.com/p/C3WcVezr21s/", "_blank");
+    })
+    
+    YouTubeLogo.addEventListener("click", () => {
+        window.open("https://www.youtube.com/watch?v=GH-DOiP0A9w&t=1194s", "_blank");
+    });
+
+    InstagramLogo.addEventListener("click", () => {
+        window.open("https://www.instagram.com/nightlinepro/", "_blank");
+    });
+
+    DeCastroLogo.addEventListener("click", () => {
+        window.open("https://decastrodj.com/", "_blank");
+    });
+
+    WhatsAppLogo.addEventListener("click", () => {
+        window.open("https://api.whatsapp.com/send?phone=573117807481&text=Hola%20Night%20Line%2C%20quiero%20mi%20evento%20con%20ustedes", "_blank");
+    });
+}
 
 
-    if (TextTitleDiv){
-        TitleDiv.style.padding = "50px 10px 20px 30px"        
-    }   
-    if (TitleH1) {
-        TitleH1.style.color = "white";
-        TitleH1.style.display = "column";
-        TitleH1.innerHTML = "Night Line ";
-    }
+if (TextTitleDiv) {
+    TitleDiv.style.padding = "50px 10px 20px 30px"
+}
+if (TitleH1) {
+    TitleH1.style.color = "white";
+    TitleH1.style.display = "column";
+    TitleH1.innerHTML = "Night Line ";
+}
 
-    if (TitleParagraph){
-        TitleParagraph.style.color = "white"; 
-        TitleParagraph.innerHTML = "Somos una marca reconocida que diseña y produce eventos sociales, bodas y lanzamientos de marca manejamos sonido, luces y hemos creado muchas de las mejores experiencias en Bogotá.";
-    }
+if (TitleParagraph) {
+    TitleParagraph.style.color = "white";
+    TitleParagraph.innerHTML = "Somos una marca reconocida que diseña y produce eventos sociales, bodas y lanzamientos de marca manejamos sonido, luces y hemos creado muchas de las mejores experiencias en Bogotá.";
+}
 
-    if (WhatsAppButton){
-        WhatsAppButton.innerHTML = "Cotiza tu evento";
-        WhatsAppButton.appendChild(imgwa);
-        WhatsAppButton.style.margin = '5px';
-        WhatsAppButton.style.padding = '5px 10px';
-        WhatsAppButton.style.alignItems = 'center';
+if (WhatsAppButton) {
+    WhatsAppButton.innerHTML = "Cotiza tu evento";
+    WhatsAppButton.appendChild(imgwa);
+    WhatsAppButton.style.margin = '5px';
+    WhatsAppButton.style.padding = '5px 10px';
+    WhatsAppButton.style.alignItems = 'center';
 
-    }
-    if (ExperienciasDiv){
-        ExperienciasDiv.style.padding = "10px 10px 10px 10px";
-        ExperienciasDiv.style.maxWidth = "50rem";
+}
+if (ExperienciasDiv) {
+    ExperienciasDiv.style.padding = "10px 10px 10px 10px";
+    ExperienciasDiv.style.maxWidth = "50rem";
 
-    }
-    if (TitleExperiencias){
-        TitleExperiencias.style.color = "White";
-        TitleExperiencias.style.display = "column";
-        TitleExperiencias.innerHTML = "Más que eventos creamos experiencias";
-    }   
-    if (TextExperiencias){
-        TextExperiencias.style.color = "White";
-        TextExperiencias.style.display = "column";
-        TextExperiencias.innerHTML = "Nos encargamos de la producción, la música y cada detalle para que tu evento fluya sin estrés y se convierta en una experiencia inolvidable.";
+}
+if (TitleExperiencias) {
+    TitleExperiencias.style.color = "White";
+    TitleExperiencias.style.display = "column";
+    TitleExperiencias.innerHTML = "Más que eventos creamos experiencias";
+}
+if (TextExperiencias) {
+    TextExperiencias.style.color = "White";
+    TextExperiencias.style.display = "column";
+    TextExperiencias.innerHTML = "Nos encargamos de la producción, la música y cada detalle para que tu evento fluya sin estrés y se convierta en una experiencia inolvidable.";
 
-    }
+}
 
-    if (queHacemosText){
-        queHacemosText.style.color = "black";
-        queHacemosText.style.display = "column";
-        queHacemosText.innerHTML = "";
-    }
+if (queHacemosText) {
+    queHacemosText.style.color = "black";
+    queHacemosText.style.display = "column";
+    queHacemosText.innerHTML = "";
+}
 
-    // Data for images
+// Data for images
 const imageData = [
     {
         title: "Eventos Sociales",
@@ -123,15 +203,18 @@ function populateImageQueHacemosGrid() {
     queHacemosTitle.textContent = '¿Qué Hacemos?';
     clientesTitle.textContent = 'Clientes Satisfechos';
     clientesText.textContent = 'Lo que nuestros clientes dicen de nosotros:';
+    clientesText.style.marginBot = "-12rem";
     clientesTitle.style.color = 'black';
+    clientesTitle.style.marginBot = "-12rem";
     queHacemosTitle.style.color = 'black';
-    queHacemosTitle.style.margin = "15px";
-    queHacemosTitle.style.padding= "1px";
+    queHacemosTitle.style.margin = "10px";
+    queHacemosTitle.style.marginBot = "-5px";
+    queHacemosTitle.style.padding = "0px";
     queHacemosText.textContent = "Contamos con una amplia experiencia en:";
-    
+
     // Get all grid items
     const gridItems = document.querySelectorAll('.grid-item');
-    
+
     // Populate each grid item with data
     gridItems.forEach((item, index) => {
         if (imageData[index]) {

@@ -240,3 +240,172 @@
         startAutoPlay();
     });
 })();
+
+// ==========================================
+// HORIZONTAL WHITE DIV SLIDER (MATCHING FIRST)
+// ==========================================
+
+(function () {
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const slide1 = document.getElementById("queHacemosDiv");
+        const slide2 = document.getElementById("clientesDiv");
+
+        if (!slide1 || !slide2) {
+            console.error("White slider elements not found");
+            return;
+        }
+
+        /* ==============================
+           WRAPPER (same as first slider)
+        ============================== */
+        const sliderWrapper = document.createElement("div");
+        sliderWrapper.style.cssText = `
+            width: 80%;
+            margin: 0 auto 2rem;
+            overflow: hidden;
+            position: relative;
+            border-radius: 5rem;
+            min-height: 500px;
+            background: #ffffff;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+        `;
+
+        /* ==============================
+           INNER
+        ============================== */
+        const sliderInner = document.createElement("div");
+        sliderInner.style.cssText = `
+            display: flex;
+            width: 200%;
+            height: 100%;
+            transition: transform 0.6s ease-in-out;
+        `;
+
+        /* ==============================
+           SLIDES (NO RADIUS)
+        ============================== */
+        [slide1, slide2].forEach(div => {
+            div.style.cssText += `
+                flex: 0 0 50%;
+                width: 50%;
+                min-height: 500px;
+                height: px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 3rem 2.5rem;
+                box-sizing: border-box;
+                background: #ffffff;
+                border-radius: 0;
+            `;
+        });
+
+        /* ==============================
+           DOM MOVE
+        ============================== */
+        const parent = slide1.parentNode;
+        parent.insertBefore(sliderWrapper, slide1);
+        sliderInner.append(slide1, slide2);
+        sliderWrapper.appendChild(sliderInner);
+
+        /* ==============================
+           DOTS (same behavior)
+        ============================== */
+        const dotsContainer = document.createElement("div");
+        dotsContainer.style.cssText = `
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        `;
+
+        const dots = [];
+        for (let i = 0; i < 2; i++) {
+            const dot = document.createElement("div");
+            dot.style.cssText = `
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: ${i === 0 ? "#8d22ff" : "#cfcfcf"};
+                cursor: pointer;
+                transition: 0.3s;
+            `;
+            dots.push(dot);
+            dotsContainer.appendChild(dot);
+        }
+        sliderWrapper.appendChild(dotsContainer);
+
+        /* ==============================
+           ARROWS (MATCHING FIRST)
+        ============================== */
+        const createArrow = dir => {
+            const arrow = document.createElement("div");
+            arrow.style.cssText = `
+                position: absolute;
+                top: 50%;
+                ${dir}: 20px;
+                transform: translateY(-50%);
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: rgba(141,34,255,0.35);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                z-index: 10;
+                transition: 0.3s;
+            `;
+            arrow.innerHTML = `<span style="color:#fff;font-size:18px">${dir === "left" ? "‹" : "›"}</span>`;
+            arrow.onmouseenter = () => arrow.style.transform = "translateY(-50%) scale(1.1)";
+            arrow.onmouseleave = () => arrow.style.transform = "translateY(-50%) scale(1)";
+            return arrow;
+        };
+
+        const leftArrow = createArrow("left");
+        const rightArrow = createArrow("right");
+        sliderWrapper.append(leftArrow, rightArrow);
+
+        /* ==============================
+           LOGIC (IDENTICAL)
+        ============================== */
+        let currentSlide = 0;
+        let interval;
+
+        function update() {
+            sliderInner.style.transform = `translateX(${currentSlide * -50}%)`;
+            dots.forEach((d, i) => {
+                d.style.background = i === currentSlide ? "#8d22ff" : "#cfcfcf";
+            });
+        }
+
+        function next() {
+            currentSlide = (currentSlide + 1) % 2;
+            update();
+        }
+
+        function prev() {
+            currentSlide = (currentSlide - 1 + 2) % 2;
+            update();
+        }
+
+        function autoplay() {
+            clearInterval(interval);
+            interval = setInterval(next, 5200);
+        }
+
+        leftArrow.onclick = () => { prev(); autoplay(); };
+        rightArrow.onclick = () => { next(); autoplay(); };
+        dots.forEach((d, i) => d.onclick = () => { currentSlide = i; update(); autoplay(); });
+
+        sliderWrapper.onmouseenter = () => clearInterval(interval);
+        sliderWrapper.onmouseleave = autoplay;
+
+        update();
+        autoplay();
+    });
+})();
