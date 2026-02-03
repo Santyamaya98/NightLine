@@ -38,7 +38,7 @@
             div.style.flex = "0 0 50%";
             div.style.width = "50%";
             div.style.minHeight = "500px";
-            div.style.height = "auto";
+            div.style.height = "500px";
             div.style.display = "flex";
             div.style.flexDirection = "row";
             div.style.alignItems = "center";
@@ -48,7 +48,7 @@
             div.style.boxShadow = "0 4px 20px rgb(153, 88, 246)";
             div.style.border = "1.3px solid #8d22ff";
             div.style.margin = "0";
-            div.style.maxWidth = "100%";
+            div.style.maxWidth = "90%";
             div.style.padding = "0";
             div.style.boxSizing = "border-box";
             div.style.position = "relative";

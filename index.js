@@ -55,7 +55,7 @@
 
     if (TitleParagraph){
         TitleParagraph.style.color = "white"; 
-        TitleParagraph.innerHTML = "¿Quienes somos? <br><br> Somos una marca reconocida que diseña y produce eventos sociales, bodas y lanzamientos de marca manejamos sonido, luces y hemos creado muchas de las mejores experiencias en Bogotá.";
+        TitleParagraph.innerHTML = "Somos una marca reconocida que diseña y produce eventos sociales, bodas y lanzamientos de marca manejamos sonido, luces y hemos creado muchas de las mejores experiencias en Bogotá.";
     }
 
     if (WhatsAppButton){
@@ -67,20 +67,20 @@
 
     }
     if (ExperienciasDiv){
-        ExperienciasDiv.style.padding = "50px 10px 20px 30px";
+        ExperienciasDiv.style.padding = "10px 10px 10px 10px";
+        ExperienciasDiv.style.maxWidth = "50rem";
 
     }
     if (TitleExperiencias){
         TitleExperiencias.style.color = "White";
         TitleExperiencias.style.display = "column";
         TitleExperiencias.innerHTML = "Más que eventos creamos experiencias";
-        TitleExperiencias.style.width = "100%";
     }   
     if (TextExperiencias){
         TextExperiencias.style.color = "White";
         TextExperiencias.style.display = "column";
-        TextExperiencias.style.width = "100%";   
         TextExperiencias.innerHTML = "Nos encargamos de la producción, la música y cada detalle para que tu evento fluya sin estrés y se convierta en una experiencia inolvidable.";
+
     }
 
     if (queHacemosText){
