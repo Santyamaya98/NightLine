@@ -38,7 +38,7 @@
             div.style.flex = "0 0 50%";
             div.style.width = "50%";
             div.style.minHeight = "500px";
-            div.style.height = "500px";
+            div.style.height = "700px";
             div.style.display = "flex";
             div.style.flexDirection = "row";
             div.style.alignItems = "center";

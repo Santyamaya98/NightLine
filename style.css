@@ -225,12 +225,14 @@ body {
         display: flex;
         flex-direction: column;
         max-width: 95%;
+        max-height: 500px;
     }
     
     #queHacemosDiv, #clientesDiv {
         display: flex;
         flex-direction: column;
         max-width: 95%;
+        max-height: 500px;
     }
     
     #TextTitleDiv, #TextExperienciasDiv, #queHacemosText, #clientesTitle {
@@ -240,7 +242,7 @@ body {
     }
     
     #TitleImg, #ExpImg1, #ExpImg2, #ExpImg3, #queHacemosImg1, #queHacemosImg2, #queHacemosImg3, #imgPaoSua, #repMac, #imgJuan {
-        width: 100%;
+        width: 80%;
         height: 250px;
         order: 1;
         margin-right: 0;
@@ -248,16 +250,18 @@ body {
     }
     
     #Title, #TitleExperiencias, #queHacemosTitle, #clientesTitle {
-        font-size: 2.2rem;
+        font-size: 12px;
     }
     
     #TitleParagraph, #TextExperiencias {
         font-size: 1rem;
         margin-bottom: 20px;
+        font-size: small;
+
     }
     
     #queHacemosText, #clientesText {
-        font-size: 1rem;
+        font-size: 10px;
         margin-left: 0;
     }
     

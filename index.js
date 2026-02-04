@@ -135,7 +135,7 @@ if (TitleH1) {
 
 if (TitleParagraph) {
     TitleParagraph.style.color = "white";
-    TitleParagraph.innerHTML = "Somos una marca reconocida que diseña y produce eventos sociales, bodas y lanzamientos de marca manejamos sonido, luces y hemos creado muchas de las mejores experiencias en Bogotá.";
+    TitleParagraph.innerHTML = "Creamos las mejores experiencias en Bogotá! Particippado en grandes lanzamientos de marcas, y ademas hemos realizado las mejores bodas y eventos.";
 }
 
 if (WhatsAppButton) {
